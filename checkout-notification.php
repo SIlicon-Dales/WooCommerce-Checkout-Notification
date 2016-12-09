@@ -2,8 +2,8 @@
 /*
 Plugin Name: WooCommerce Checkout Notification
 Description: Allows the owner to display a notification during check out
-Author: Samer Albahra
-Version: 0.1
+Author: Samer Albahra and amended by Robin Scott
+Version: 0.2
 */
 
 // Exit if accessed directly
@@ -21,7 +21,7 @@ add_action('admin_menu', 'wcn_setup_menu');
 // Add action to register settings
 add_action('admin_init', 'wcn_settings');
 // Bind WooCommerce before cart event to check if notification should be shown
-add_action('woocommerce_before_cart', 'wcn_show_notification');
+add_action('woocommerce_before_checkout_form', 'wcn_show_notification');
 
 function wcn_settings() {
 	register_setting('wcn-settings', 'enabled');
